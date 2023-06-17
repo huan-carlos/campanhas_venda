@@ -37,3 +37,4 @@ build/
 
 ### DataBase ###
 *.sql
+application.properties

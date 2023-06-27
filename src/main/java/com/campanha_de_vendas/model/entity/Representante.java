@@ -3,7 +3,6 @@ package com.campanha_de_vendas.model.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "representante")

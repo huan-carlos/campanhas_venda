@@ -3,7 +3,6 @@ package com.campanha_de_vendas.controller;
 import com.campanha_de_vendas.DTO.RepresentanteDTO;
 import com.campanha_de_vendas.service.RepresentanteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -30,10 +30,6 @@ public class MetaController {
 
     @GetMapping("/campanha/{id}")
     public List<MetaDTO> pesquisaMetaPorCampanha(@PathVariable Long id){
-        CampanhaDTO campanhaDTO = campanhaService.findById(id);
-        System.out.println(campanhaDTO);
-        List<MetaDTO> metaDTOList = metaService.findByCampanha(campanhaDTO);
-        System.out.println(metaDTOList);
-        return metaDTOList;
+        return metaService.findByCampanha(campanhaService.findById(id));
     }
 }

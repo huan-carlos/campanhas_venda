@@ -13,9 +13,9 @@ public class MetaDTO {
 
     private Representante representante;
 
-    private BigDecimal valor_meta;
+    private Double valor_meta;
 
-    public MetaDTO(Long id, Campanha campanha, Representante representante) {
+    public MetaDTO(Long id, Campanha campanha, Representante representante, Double valor_meta) {
         this.id = id;
         this.campanha = campanha;
         this.representante = representante;
@@ -25,6 +25,7 @@ public class MetaDTO {
         this.id = meta.getId();
         this.campanha = meta.getCampanha();
         this.representante = meta.getRepresentante();
+        this.valor_meta = meta.getValor_meta();
     }
 
     public MetaDTO() {
@@ -54,15 +55,25 @@ public class MetaDTO {
         this.representante = representante;
     }
 
-    public BigDecimal getValor_meta() {
+    public Double getValor_meta() {
         return valor_meta;
     }
 
-    public void setValor_meta(BigDecimal valor_meta) {
+    public void setValor_meta(Double valor_meta) {
         this.valor_meta = valor_meta;
     }
 
     public Meta toEntity(){
         return new Meta(this.id, this.campanha, this.representante, this.valor_meta);
+    }
+
+    @Override
+    public String toString() {
+        return "MetaDTO{" +
+                "id=" + id +
+                ", campanha=" + campanha.getNome() +
+                ", representante=" + representante.getNome() +
+                ", valor_meta=" + valor_meta +
+                '}';
     }
 }

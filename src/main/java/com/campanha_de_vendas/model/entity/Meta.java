@@ -19,9 +19,9 @@ public class Meta {
     @JoinColumn(name = "id_representante")
     private Representante representante;
 
-    private BigDecimal valor_meta;
+    private Double valor_meta;
 
-    public Meta(Long id, Campanha campanha, Representante representante, BigDecimal valor_meta) {
+    public Meta(Long id, Campanha campanha, Representante representante, Double valor_meta) {
         this.id = id;
         this.campanha = campanha;
         this.representante = representante;
@@ -55,11 +55,11 @@ public class Meta {
         this.representante = representante;
     }
 
-    public BigDecimal getValor_meta() {
+    public Double getValor_meta() {
         return valor_meta;
     }
 
-    public void setValor_meta(BigDecimal valor_meta) {
+    public void setValor_meta(Double valor_meta) {
         this.valor_meta = valor_meta;
     }
 }

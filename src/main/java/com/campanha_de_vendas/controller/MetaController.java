@@ -1,6 +1,8 @@
 package com.campanha_de_vendas.controller;
 
+import com.campanha_de_vendas.DTO.CampanhaDTO;
 import com.campanha_de_vendas.DTO.MetaDTO;
+import com.campanha_de_vendas.service.CampanhaService;
 import com.campanha_de_vendas.service.MetaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,9 @@ import java.util.List;
 public class MetaController {
     @Autowired
     private MetaService metaService;
+
+    @Autowired
+    private CampanhaService campanhaService;
 
     @PostMapping
     public void criarMeta(MetaDTO metaDTO){
@@ -25,6 +30,10 @@ public class MetaController {
 
     @GetMapping("/campanha/{id}")
     public List<MetaDTO> pesquisaMetaPorCampanha(@PathVariable Long id){
-        return null;
+        CampanhaDTO campanhaDTO = campanhaService.findById(id);
+        System.out.println(campanhaDTO);
+        List<MetaDTO> metaDTOList = metaService.findByCampanha(campanhaDTO);
+        System.out.println(metaDTOList);
+        return metaDTOList;
     }
 }

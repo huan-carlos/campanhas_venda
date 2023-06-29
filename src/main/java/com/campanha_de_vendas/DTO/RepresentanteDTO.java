@@ -54,4 +54,13 @@ public class RepresentanteDTO {
     public Representante toEntity(){
         return new Representante(this.id, this.nome, this.metaList);
     }
+
+    @Override
+    public String toString() {
+        return "RepresentanteDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", metaTotal=" + metaList.stream().mapToDouble(Meta::getValor_meta).sum() +
+                '}';
+    }
 }

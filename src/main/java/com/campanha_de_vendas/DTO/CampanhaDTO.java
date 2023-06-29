@@ -75,4 +75,15 @@ public class CampanhaDTO {
     public Campanha toEntity(){
         return new Campanha(this.id, this.nome, this.dataInicio, this.dataFim, this.metaList);
     }
+
+    @Override
+    public String toString() {
+        return "CampanhaDTO{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", dataInicio=" + dataInicio +
+                ", dataFim=" + dataFim +
+                ", metaTotal=" + metaList.stream().mapToDouble(value -> value.getValor_meta().doubleValue()).sum() +
+                '}';
+    }
 }

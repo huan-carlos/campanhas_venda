@@ -22,6 +22,10 @@ public class Representante {
         this.metaList = metaList;
     }
 
+    public Representante(Long id) {
+        this.id = id;
+    }
+
     public Representante() {
     }
 

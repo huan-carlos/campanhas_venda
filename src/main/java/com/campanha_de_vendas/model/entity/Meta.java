@@ -2,8 +2,6 @@ package com.campanha_de_vendas.model.entity;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-
 @Entity
 @Table(name = "meta")
 public class Meta {
@@ -26,6 +24,10 @@ public class Meta {
         this.campanha = campanha;
         this.representante = representante;
         this.valor_meta = valor_meta;
+    }
+
+    public Meta(Long id) {
+        this.id = id;
     }
 
     public Meta() {

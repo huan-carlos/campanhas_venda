@@ -25,6 +25,10 @@ public class Campanha {
         this.metaList = metaList;
     }
 
+    public Campanha(Long id) {
+        this.id = id;
+    }
+
     public Campanha() {
     }
 

@@ -4,27 +4,25 @@ import com.campanha_de_vendas.model.entity.Campanha;
 import com.campanha_de_vendas.model.entity.Meta;
 import com.campanha_de_vendas.model.entity.Representante;
 
-import java.math.BigDecimal;
-
 public class MetaDTO {
     private Long id;
 
-    private Campanha campanha;
+    private Long id_campanha;
 
-    private Representante representante;
+    private Long id_representante;
 
     private Double valor_meta;
 
-    public MetaDTO(Long id, Campanha campanha, Representante representante, Double valor_meta) {
+    public MetaDTO(Long id, Long id_campanha, Long id_representante, Double valor_meta) {
         this.id = id;
-        this.campanha = campanha;
-        this.representante = representante;
+        this.id_campanha = id_campanha;
+        this.id_representante = id_representante;
     }
 
     public MetaDTO(Meta meta) {
         this.id = meta.getId();
-        this.campanha = meta.getCampanha();
-        this.representante = meta.getRepresentante();
+        this.id_campanha = meta.getCampanha().getId();
+        this.id_representante = meta.getRepresentante().getId();
         this.valor_meta = meta.getValor_meta();
     }
 
@@ -39,20 +37,20 @@ public class MetaDTO {
         this.id = id;
     }
 
-    public Campanha getCampanha() {
-        return campanha;
+    public Long getId_campanha() {
+        return id_campanha;
     }
 
-    public void setCampanha(Campanha campanha) {
-        this.campanha = campanha;
+    public void setId_campanha(Long id_campanha) {
+        this.id_campanha = id_campanha;
     }
 
-    public Representante getRepresentante() {
-        return representante;
+    public Long getId_representante() {
+        return id_representante;
     }
 
-    public void setRepresentante(Representante representante) {
-        this.representante = representante;
+    public void setId_representante(Long id_representante) {
+        this.id_representante = id_representante;
     }
 
     public Double getValor_meta() {
@@ -64,15 +62,15 @@ public class MetaDTO {
     }
 
     public Meta toEntity(){
-        return new Meta(this.id, this.campanha, this.representante, this.valor_meta);
+        return new Meta(this.id, new Campanha(this.id_campanha), new Representante(this.id_representante), this.valor_meta);
     }
 
     @Override
     public String toString() {
         return "MetaDTO{" +
                 "id=" + id +
-                ", campanha=" + campanha.getNome() +
-                ", representante=" + representante.getNome() +
+                ", id_campanha=" + id_campanha +
+                ", id_representante=" + id_representante +
                 ", valor_meta=" + valor_meta +
                 '}';
     }

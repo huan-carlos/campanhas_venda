@@ -83,7 +83,7 @@ public class CampanhaDTO {
                 ", nome='" + nome + '\'' +
                 ", dataInicio=" + dataInicio +
                 ", dataFim=" + dataFim +
-                ", metaTotal=" + metaList.stream().mapToDouble(value -> value.getValor_meta().doubleValue()).sum() +
+                ", metaTotal=" + metaList.stream().mapToDouble(Meta::getValor_meta).sum() +
                 '}';
     }
 }

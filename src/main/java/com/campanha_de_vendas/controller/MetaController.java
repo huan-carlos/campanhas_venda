@@ -31,4 +31,9 @@ public class MetaController {
     public List<MetaDTO> pesquisaMetaPorCampanha(@PathVariable Long id){
         return metaService.findByCampanha(campanhaService.findById(id));
     }
+
+    @GetMapping("/representante/{id}")
+    public List<MetaDTO> pesquisaMetaPorRepresentante(@PathVariable Long id){
+        return metaService.findAllByRepresentante_Id(id);
+    }
 }

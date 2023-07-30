@@ -27,4 +27,9 @@ public class MetaService {
         List<Meta> metaList = metaRepository.findAllByCampanha(campanhaDTO.toEntity());
         return metaList.stream().map(MetaDTO::new).collect(Collectors.toList());
     }
+
+    public List<MetaDTO> findAllByRepresentante_Id(Long id){
+        List<Meta> metaList = metaRepository.findAllByRepresentante_Id(id);
+        return metaList.stream().map(MetaDTO::new).collect(Collectors.toList());
+    }
 }

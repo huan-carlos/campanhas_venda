@@ -1,7 +1,6 @@
 package com.campanha_de_vendas.controller;
 
 import com.campanha_de_vendas.DTO.MetaDTO;
-import com.campanha_de_vendas.service.CampanhaService;
 import com.campanha_de_vendas.service.MetaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

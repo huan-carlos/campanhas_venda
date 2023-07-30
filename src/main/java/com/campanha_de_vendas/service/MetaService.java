@@ -1,6 +1,5 @@
 package com.campanha_de_vendas.service;
 
-import com.campanha_de_vendas.DTO.CampanhaDTO;
 import com.campanha_de_vendas.DTO.MetaDTO;
 import com.campanha_de_vendas.model.entity.Meta;
 import com.campanha_de_vendas.model.repository.MetaRepository;

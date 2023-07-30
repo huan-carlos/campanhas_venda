@@ -14,9 +14,6 @@ public class MetaController {
     @Autowired
     private MetaService metaService;
 
-    @Autowired
-    private CampanhaService campanhaService;
-
     @PostMapping
     public void criarMeta(MetaDTO metaDTO){
         metaService.save(metaDTO);
@@ -29,7 +26,7 @@ public class MetaController {
 
     @GetMapping("/campanha/{id}")
     public List<MetaDTO> pesquisaMetaPorCampanha(@PathVariable Long id){
-        return metaService.findByCampanha(campanhaService.findById(id));
+        return metaService.findAllByCampanha_Id(id);
     }
 
     @GetMapping("/representante/{id}")

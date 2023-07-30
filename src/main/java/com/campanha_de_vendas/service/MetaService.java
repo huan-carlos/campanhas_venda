@@ -23,8 +23,8 @@ public class MetaService {
         metaRepository.delete(metaDTO.toEntity());
     }
 
-    public List<MetaDTO> findByCampanha(CampanhaDTO campanhaDTO){
-        List<Meta> metaList = metaRepository.findAllByCampanha(campanhaDTO.toEntity());
+    public List<MetaDTO> findAllByCampanha_Id(Long id){
+        List<Meta> metaList = metaRepository.findAllByCampanha_Id(id);
         return metaList.stream().map(MetaDTO::new).collect(Collectors.toList());
     }
 

@@ -1,3 +1,5 @@
+[![Build Java with Maven](https://github.com/huan-carlos/campanhas_venda/actions/workflows/build.yml/badge.svg)](https://github.com/huan-carlos/campanhas_venda/actions/workflows/build.yml)
+
 # Campanhas de Venda
 Sistema de Gestão para Campanha de Vendas
 
